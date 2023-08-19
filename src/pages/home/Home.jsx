@@ -39,18 +39,21 @@ const Home = () => {
       return a.username.localeCompare(b.username);
     }
   });
+  
   const currentItems = sortedItems.slice(startIndex, endIndex);
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
-  const topRef = useRef(null); // Create a ref
+  const topRef = useRef(null); 
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
+    setSearchItems(""); 
     topRef.current.scrollIntoView({ behavior: 'smooth' });
 
   };
   const handleClick=()=>{
     setCurrentPage(1);
+    setSearchItems("");
   }
 
   const container = {

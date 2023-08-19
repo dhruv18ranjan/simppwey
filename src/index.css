@@ -2,3 +2,13 @@ body{
     margin: 0;
     padding: 0;
 }
+::-webkit-scrollbar {
+    width: 17px;
+    background: black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+    min-height: 15rem;
+  }
+  
