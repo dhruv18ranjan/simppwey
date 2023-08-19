@@ -4,6 +4,7 @@ import "./home.scss"
 import Card from '../../components/card/Card'
 import jsondata from "../../profiles.json"
 import logo from "../../assets/logo.png"
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -48,6 +49,9 @@ const Home = () => {
     topRef.current.scrollIntoView({ behavior: 'smooth' });
 
   };
+  const handleClick=()=>{
+    setCurrentPage(1);
+  }
 
   const container = {
     hidden: {},
@@ -73,9 +77,12 @@ const Home = () => {
   return (
     <div className='main'>
       <div className='navbar' ref={topRef}>
-        <div className='navbar-logo'>
+        <Link to="/">
+
+        <div className='navbar-logo' onClick={handleClick}>
           <img src={logo} alt="" />
         </div>
+        </Link>
         <div className='navbar-input'>
           <input type="text" id='search' placeholder='    search..' onChange={(e) => { setSearchItems(e.target.value) }} />
           &nbsp;  
